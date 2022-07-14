@@ -3,13 +3,13 @@ export default function Navbar() {
         <div class="navbar">
             <div class="container">
                 <div class="logo">
-                    <ion-icon name="logo-instagram"></ion-icon>
+                    <Ion name="logo-instagram" />
                     <div class="separador"></div>
                     <img src="assets/img/logo.png" />
                 </div>
 
                 <div class="logo-mobile">
-                    <ion-icon name="logo-instagram"></ion-icon>
+                    <Ion name="logo-instagram" />
                 </div>
 
                 <div class="instagram-mobile">
@@ -21,16 +21,22 @@ export default function Navbar() {
                 </div>
 
                 <div class="icones">
-                    <ion-icon name="paper-plane-outline"></ion-icon>
-                    <ion-icon name="compass-outline"></ion-icon>
-                    <ion-icon name="heart-outline"></ion-icon>
-                    <ion-icon name="person-outline"></ion-icon>
+                    <Ion name="paper-plane-outline" />
+                    <Ion name="compass-outline" />
+                    <Ion name="heart-outline" />
+                    <Ion name="person-outline" />
                 </div>
 
                 <div class="icones-mobile">
-                    <ion-icon name="paper-plane-outline"></ion-icon>
+                    <Ion name="paper-plane-outline" />
                 </div>
             </div>
         </div>
     )
+}
+
+function Ion(props) {
+    return (
+        <ion-icon name={props.name}></ion-icon>
+    );
 }

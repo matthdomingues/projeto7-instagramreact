@@ -1,11 +1,17 @@
 export default function Mobile() {
     return (
         <div class="fundo-mobile">
-            <ion-icon name="home"></ion-icon>
-            <ion-icon name="search-outline"></ion-icon>
-            <ion-icon name="add-circle-outline"></ion-icon>
-            <ion-icon name="heart-outline"></ion-icon>
-            <ion-icon name="person-outline"></ion-icon>
+            <Ion name="home" />
+            <Ion name="search-outline" />
+            <Ion name="add-circle-outline" />
+            <Ion name="heart-outline" />
+            <Ion name="person-outline" />
         </div>
     )
+}
+
+function Ion(props) {
+    return (
+        <ion-icon name={props.name}></ion-icon>
+    );
 }
