@@ -1,3 +1,5 @@
+import React from 'react';
+
 export default function Esquerda() {
 
     return (
@@ -44,6 +46,8 @@ function Stories() {
     )
 }
 
+
+
 function Posts() {
 
     const post = [{
@@ -58,6 +62,21 @@ function Posts() {
     }]
 
     function PostIndividual(props) {
+
+        const [ion, setIon] = React.useState('heart-outline');
+        const [cor, setCor] = React.useState("dark");
+
+        function DarLike() {
+            if (ion === "heart-outline" && cor === "dark") {
+                setIon("heart")
+                setCor("danger")
+            } else {
+                setIon("heart-outline")
+                setCor("dark")
+            }
+
+        }
+
         return (
             <div class="post">
                 <div class="topo">
@@ -77,7 +96,7 @@ function Posts() {
                 <div class="fundo">
                     <div class="acoes">
                         <div>
-                            <ion-icon name="heart-outline"></ion-icon>
+                            <ion-icon onClick={DarLike} color={cor} name={ion} ></ion-icon>
                             <ion-icon name="chatbubble-outline"></ion-icon>
                             <ion-icon name="paper-plane-outline"></ion-icon>
                         </div>
@@ -97,8 +116,6 @@ function Posts() {
         )
     }
 
-
-
     return (
         <div class="posts">
 
@@ -108,8 +125,7 @@ function Posts() {
                     imgPost={p.imgPost}
                     curtidoPor={p.curtidoPor}
                     imgCurtidoPor={p.imgCurtidoPor}
-                    qtdCurtidas={p.qtdCurtidas}
-                    ion1={p.ion1} />))}
+                    qtdCurtidas={p.qtdCurtidas} />))}
         </div>
     )
 
